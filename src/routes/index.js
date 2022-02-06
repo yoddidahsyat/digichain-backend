@@ -3,9 +3,13 @@ const router = express.Router()
 
 // const { auth } = require('../middlewares/auth');
 
+const { home } = require('../controllers/home')
 const { getLaunchpads, getLaunchpad, addLaunchpad, updateLaunchpad, deleteLaunchpad } = require('../controllers/launchpad')
 const { getTokens, getToken, addToken, updateToken, deleteToken } = require('../controllers/token')
 
+
+// ------------------- HOME ------------------- //
+router.get('/', home)
 
 // ------------------- LAUNCHPAD ------------------- //
 router.get('/launchpads', getLaunchpads)
