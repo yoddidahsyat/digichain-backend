@@ -8,14 +8,13 @@ const express = require("express");
 const app = express();
 
 // use .env
-// require("dotenv").config();
+require("dotenv").config();
 
 //import route module
 const router = require("./src/routes");
 
 //define the server port
-// const port = process.env.PORT || 5000;
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 //use bodyparser
 app.use(express.json());
