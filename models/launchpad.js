@@ -37,6 +37,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Launchpad',
+    tableName: 'launchpads'
   });
   return Launchpad;
 };
