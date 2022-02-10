@@ -2,7 +2,7 @@
 const express = require("express");
 
 //initiate cors module
-// var cors = require("cors");
+var cors = require("cors");
 
 //use express in app variable
 const app = express();
@@ -20,7 +20,7 @@ const port = process.env.PORT || 5000;
 app.use(express.json());
 
 //use cors   v
-// app.use(cors());
+app.use(cors());
 
 //akses upload directory
 // app.use("/api/v1/uploads", express.static("uploads"));

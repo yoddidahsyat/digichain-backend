@@ -84,9 +84,12 @@ exports.addToken = async (req, res) => {
                 message: ('Invalid request')
             })
         }
+
+        const address = generateRandomToken(30);
         
         const tokenData = {
-            ...body
+            ...body,
+            address
         }
         const token = await Token.create(tokenData);
         res.send({
@@ -179,4 +182,15 @@ exports.deleteToken = async (req, res) => {
     } catch (err) {
         return errorResponse(err, res);
     }
+}
+
+function generateRandomToken(length) {
+    let result           = '';
+    const characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    for ( let i = 0; i < length; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() * 
+        charactersLength));
+    }
+    return result;
 }
