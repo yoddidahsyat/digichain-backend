@@ -21,8 +21,8 @@ router.get('/', home)
 router.get('/launchpads', getLaunchpads)
 router.get('/launchpad/:id', getLaunchpad)
 router.post('/launchpad', addLaunchpad)
-router.patch('/launchpad/:id', updateLaunchpad)
-router.delete('/launchpad/:id', deleteLaunchpad)
+router.patch('/launchpad/:id', auth, updateLaunchpad)
+router.delete('/launchpad/:id', auth, deleteLaunchpad)
 
 // ------------------- TOKEN ------------------- //
 router.get('/tokens', getTokens)
