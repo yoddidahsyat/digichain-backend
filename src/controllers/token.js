@@ -86,6 +86,12 @@ exports.addToken = async (req, res) => {
         }
 
         const address = generateRandomToken(30);
+
+        for (const key in body) {
+            if (Object.hasOwnProperty.call(body, key)) {
+                if (body[key] === '') delete body[key];
+            }
+        }
         
         const tokenData = {
             ...body,
